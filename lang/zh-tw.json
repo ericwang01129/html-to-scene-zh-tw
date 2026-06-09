@@ -1,0 +1,116 @@
+{
+	"htmltoscene": {
+		"modulename": "HTML To Scene",
+		"scenesettings":{
+			"pathPlaceholder": "從「Data」資料夾到 .HTML 檔案的相對路徑，或一個網址",
+			"uisettings": "介面設定",
+			"miscsettings": "其他設定",
+			"advsettings": "進階設定",
+			"recommendationtip": "小技巧：",
+			"warningtip":"警告：",
+			"enable": {
+				"name": "啟用",
+				"desc": "在此場景啟用 HTML To Scene。"
+			},
+			"fileLoc": {
+				"name": "選擇 HTML 檔案",
+				"hint": "你可以使用相對路徑，選擇任何儲存在 FoundryVTT 資料夾中的 HTML 檔案。",
+				"tip": "在空白畫布上使用可提升效能。你也可以放入允許 iframe 嵌入的網站。"
+			},
+			"minUI": {
+				"name": "精簡使用者介面",
+				"desc": "在顯示 HTML 檔案時，隱藏 FoundryVTT 不必要的介面元素。"
+			},
+			"keepTop": {
+				"name": "保留場景切換器",
+				"desc": "無論如何，都將場景切換器保留在螢幕頂端。"
+			},
+			"keepPlayerList": {
+				"name": "保留玩家列表",
+				"desc": "將玩家列表保留在原本的位置。"
+			},
+			"keepBottomControls": {
+				"name": "保留底部控制項",
+				"values": {
+					"defaultnone": "隱藏所有控制項",
+					"macrobaronly": "允許巨集快捷列",
+					"camerasonly": "允許攝影機",
+					"both": "允許巨集快捷列與攝影機",
+					"macroplusfps": "允許巨集快捷列與 FPS 計量器",
+					"cameraplusfps": "允許攝影機與 FPS 計量器",
+					"bothplusfps": "允許巨集快捷列、攝影機與 FPS 計量器",
+					"fpsonly": "僅允許 FoundryVTT 的 FPS 計量器"
+				},
+				"desc": "讓你選擇底部控制項的顯示方式。"
+			},
+			"spaceRight": {
+				"name": "保留側邊欄空間",
+				"desc": "在側邊欄下方加入一塊空白空間。",
+				"tip": "你可以變更畫布的背景顏色，以影響控制項後方的顏色。"
+			},
+			"rightDisabled": {
+				"name": "隱藏側邊欄",
+				"desc": "從介面中隱藏側邊欄，並重新啟用頂端的場景切換器。（若你的團隊透過語音溝通，或不需要擲骰，這會很理想）。",
+				"tip": "你可能會想讓其他場景保持可見，以便重新取得 FoundryVTT 的正常控制項。（若沒有，你隨時可以為目前場景停用此模組）。"
+			},
+			"hidePaused": {
+				"name": "隱藏「遊戲暫停」",
+				"desc": "當遊戲暫停時，隱藏顯示在 HTML 檔案上方的「遊戲暫停」字樣。"
+			},
+			"hideSmallTime": {
+				"name": "隱藏「SmallTime」",
+				"desc": "隱藏 SmallTime 的時鐘（若已啟用）。"
+			},
+			"hideBoard": {
+				"name": "隱藏 FoundryVTT 的場景板",
+				"desc": "隱藏場景板以顯著提升效能。（將不會算繪畫布）。",
+				"tip": "其他可能依賴場景板的模組或許會故障或失效，請檢查瀏覽器的主控台。"
+			},
+			"passData": {
+				"name": "啟用雙向通訊輔助功能",
+				"desc": "啟用閒置的變數，讓 iframe 與 FoundryVTT 之間的雙向通訊更為容易。詳細說明請參閱 GitHub 上的 wiki。",
+				"tip": "若要充分運用此功能，你需要具備程式撰寫與巨集方面的知識。"
+			},
+			"dataUpdateRate": {
+				"name": "FoundryVTTAccess 更新頻率",
+				"values": {
+					"default": "不更新。重新整理才會更新",
+					"fivesec": "每 5 秒更新一次",
+					"onesec": "每秒更新一次",
+					"halfsec": "每秒更新兩次",
+					"cuarterofasec": "每秒更新四次",
+					"realtime":	"即時"
+				},
+				"desc": "變更 FoundryVTTAccess 變數更新新資訊的速度。使用 updateRate 來與你的 iframe 同步。",
+				"tip": "這可能會影響效能，視使用情況而定。"
+			},
+			"iFrameRefreshRate": {
+				"name": "IFrame 重新整理",
+				"values": {
+					"defaultnone": "將不會被強制更新",
+					"oneminute": "每一分鐘強制更新一次",
+					"thirtyseconds": "每三十秒強制更新一次",
+					"fifteenseconds": "每十五秒強制更新一次",
+					"tenseconds": "每十秒強制更新一次",
+					"fiveseconds":	"每五秒強制更新一次"
+				},
+				"desc": "變更 iframe 被強制重新整理的速度。",
+				"tip": "此功能旨在提供一種無須重新載入 FoundryVTT 即可重新載入 iframe 的方式。你不應將其作為從中刷新資訊的手段，因為它會嘗試對所有玩家重新載入，必須重新提供所有內容。"
+			},
+			"autoMacros":{
+				"name": "自動巨集",
+				"desc": "此設定可讓你在不同的掛鉤（hook）上執行巨集。你必須輸入巨集「完全正確」的名稱。詳細說明請參閱 GitHub 上的 wiki。",
+				"htmltosceneReadyMacro": "當 HTML To Scene 載入 iframe 且已注入 HTMLAccess 時立即執行。（僅一次）",
+				"iframeReadyMacro": "當 iframeReady 掛鉤被觸發時立即執行（僅限相容的來源）",
+				"iframeUpdatedMacro": "當 iframeUpdated 掛鉤被觸發時立即執行（僅限相容的來源）"
+			},
+			"rememberjsexecution": "請記得，只輸入你完全信任的檔案。否則你可能會允許非預期的 JavaScript 在你的系統上執行，而那是很糟糕的。"
+		},
+		"worldsettings":{
+			"showLogo":{
+				"name": "強制處理 FoundryVTT 標誌",
+				"hint": "停用時，HTMLToScene 將「只」在需要時隱藏標誌。（場景切換後不會重新顯示標誌。這可讓某些會更動標誌、原本無法正常運作的模組與佈景主題獲得相容性）"
+			}
+		}
+	}
+}
